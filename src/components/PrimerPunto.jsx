@@ -115,49 +115,44 @@ export const PrimerPunto = () => {
         </Container>
       </form>
 
-      <Grid container spacing={2} marginTop={5}>
-        <Grid item xs={8}>
-          <div
-            style={{
-              padding: "20px",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            {matriz.length > 0 && (
-              <Grid container spacing={4}>
-                {matriz.map((row, rowIndex) => (
-                  <Grid key={rowIndex} container item spacing={4}>
-                    {row.map((col, colIndex) => (
-                      <Grid key={colIndex} item>
-                        {col}
-                      </Grid>
-                    ))}
-                  </Grid>
-                ))}
-              </Grid>
-            )}
+      <Grid container spacing={2} style={{ justifyContent: "center", marginTop: "5px" }}>
+  <Grid item>
+    <div style={{ padding: "20px" }}>
+      {matriz.length > 0 && (
+        <Grid container spacing={4}>
+          {matriz.map((row, rowIndex) => (
+            <Grid key={rowIndex} container item spacing={4}>
+              {row.map((col, colIndex) => (
+                <Grid key={colIndex} item>
+                  {col}
+                </Grid>
+              ))}
+            </Grid>
+          ))}
+        </Grid>
+      )}
+    </div>
+  </Grid>
+  <Grid item>
+    <div style={{ padding: "20px" }}>
+      <Grid container spacing={2}>
+        <Grid item>
+          <Typography>Suma primera diagonal: </Typography>
+          <div style={{ border: "2px solid blue", padding: "20px" }}>
+            {sumaDiagonalPrincipal}
           </div>
         </Grid>
-        <Grid item xs={4}>
-          <div style={{ padding: "20px" }}>
-            <Grid container spacing={2}>
-              <Grid item>
-                <Typography>Suma primera diagonal: </Typography>
-                <div style={{ border: "2px solid blue", padding: "20px" }}>
-                  {sumaDiagonalPrincipal}
-                </div>
-              </Grid>
-              <Grid item>
-                <Typography>Suma segunda diagonal: </Typography>
-                <div style={{ border: "2px solid green", padding: "20px" }}>
-                  {sumaDiagonalSecundaria}
-                </div>
-              </Grid>
-            </Grid>
+        <Grid item>
+          <Typography>Suma segunda diagonal: </Typography>
+          <div style={{ border: "2px solid green", padding: "20px" }}>
+            {sumaDiagonalSecundaria}
           </div>
         </Grid>
       </Grid>
+    </div>
+  </Grid>
+</Grid>
+
     </div>
   );
 };
